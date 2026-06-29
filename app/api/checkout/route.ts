@@ -27,7 +27,9 @@ export async function POST(req: Request) {
           quantity: 1,
         },
       ],
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success?guest=${guestId}`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/?success=true&guest=${guestId}&name=${encodeURIComponent(
+        name
+      )}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}`,
     });
 

@@ -25,9 +25,7 @@ export default function Home() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [instagram, setInstagram] = useState("");
   const [dietary, setDietary] = useState("");
-  const [plusOne, setPlusOne] = useState(false);
 
   useEffect(() => {
     setRegistered(localStorage.getItem("registered") === "true");
@@ -73,7 +71,7 @@ export default function Home() {
       return;
     }
 
-    if (guestCount + (plusOne ? 2 : 1) > 100) {
+    if (guestCount + 1 > 100) {
       alert("Not enough spots available for this RSVP.");
       return;
     }
